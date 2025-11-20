@@ -7,6 +7,7 @@ public class Primes {
         int numOfPrimes = 0;
         isPrime[0] = false;
         isPrime[1] = false;
+        System.out.println("Prime numbers up to " + n + ":");
         for(int i = 2; i < isPrime.length; i++){
             isPrime[i] = true;
         }
