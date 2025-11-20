@@ -42,19 +42,3 @@ public class MyString {
         return false;
     }
 }
-
-/*
-unhappy
-happy
-i=0
-i=1
-i=2 j=0 c=1
-i=3 j=1 c=2 
-
-
-
-
-
-
-
-*/
