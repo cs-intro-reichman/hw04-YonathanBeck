@@ -4,7 +4,7 @@ public class MyString {
         System.out.println("UnHappy : " + lowerCase("UnHappy"));
         System.out.println("This costs 15 Sheksls : " + lowerCase("This costs 15 Sheksls"));
         System.out.println("TLV : " + lowerCase("TLV"));
-        System.out.println("EaSy PeAsY LeMoN SqUeEzy : " + lowerCase("EaSy PeAsY LeMoN SqUeEzy"));
+        System.out.println("EaSy PeAsY LeMoN SqUeEZy : " + lowerCase("EaSy PeAsY LeMoN SqUeEZy"));
 
         System.out.println("Testing contains:");
         System.out.println(contains("unhappy", "happy")); // true
@@ -14,12 +14,17 @@ public class MyString {
         System.out.println(contains("personality", "son")); // true
         System.out.println(contains("personality", "dad")); // false
         System.out.println(contains("resignation", "sign")); // true
+        System.out.println("\n"+contains("baba yaga", ""));
+        System.out.println(contains("baba yaga", "baba"));
+        System.out.println(contains("baba yaga", "John Wick is the baba yaga"));
+        System.out.println(contains("baba yaga", "Yaga"));
+        System.out.println(contains("baba yaga", "babayaga"));
     }
 
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
         for(int i = 0; i < str.length(); i++){
-            if(str.charAt(i) > 66 && str.charAt(i) < 91){
+            if(str.charAt(i) < 91 && str.charAt(i) > 64){
                 str = str.replace(str.charAt(i), (char)(str.charAt(i) + 32));
             }
         }
@@ -41,4 +46,5 @@ public class MyString {
         }
         return false;
     }
+    
 }
