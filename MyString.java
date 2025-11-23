@@ -14,11 +14,6 @@ public class MyString {
         System.out.println(contains("personality", "son")); // true
         System.out.println(contains("personality", "dad")); // false
         System.out.println(contains("resignation", "sign")); // true
-        System.out.println("\n"+contains("baba yaga", ""));
-        System.out.println(contains("baba yaga", "baba"));
-        System.out.println(contains("baba yaga", "John Wick is the baba yaga"));
-        System.out.println(contains("baba yaga", "Yaga"));
-        System.out.println(contains("baba yaga", "babayaga"));
     }
 
     /** Returns the lowercase version of the given string. */
@@ -33,18 +28,22 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        int containCount = 0;
-        for(int i = 0; i < str1.length() - 1; i++){
-            for(int j = 0; j < str2.length() - 1; j++){
-                if(str1.charAt(i) == str2.charAt(j) && str1.charAt(i + 1) == str2.charAt(j + 1)){
-                    containCount++;
-                }
+        int lengthOfMatch = 0;
+        if(str2.length() == 0){
+            return true;
+        }
+        if(str2.length() > str1.length()){
+            return false;
+        }
+        for(int i = 0; i < str1.length() - str2.length() + 1; i++){
+            lengthOfMatch = 0;
+            while(lengthOfMatch < str2.length() && str1.charAt(i + lengthOfMatch) == str2.charAt(lengthOfMatch)){
+                lengthOfMatch++;
             }
-            if(containCount == str2.length() - 1){
-                    return true;
+            if (lengthOfMatch == str2.length()) {
+                return true;
             }
         }
         return false;
     }
-    
 }
